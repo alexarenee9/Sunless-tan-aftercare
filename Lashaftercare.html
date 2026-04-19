@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light only">
+<title>Unfiltered Beauty | Lash Aftercare</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Nunito:ital,wght@0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --purple: #9B00C8;
+    --magenta: #E0009A;
+    --gold: #FFD600;
+    --dark: #1A0A1F;
+    --light-purple: #F5E6FF;
+    --light-magenta: #FFE6F5;
+    --light-gold: #FFFBE0;
+    --white: #FFFFFF;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background-color: var(--white) !important;
+    font-family: 'Nunito', sans-serif;
+    color: var(--dark) !important;
+    min-height: 100vh;
+    overflow-x: hidden;
+    color-scheme: light only;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: radial-gradient(circle, rgba(155,0,200,0.05) 2px, transparent 2px);
+    background-size: 28px 28px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .stripe-top {
+    height: 16px;
+    background: repeating-linear-gradient(90deg, var(--purple) 0px, var(--purple) 24px, var(--magenta) 24px, var(--magenta) 48px, var(--gold) 48px, var(--gold) 72px);
+  }
+  .stripe-bottom {
+    height: 16px;
+    margin-top: 40px;
+    background: repeating-linear-gradient(90deg, var(--gold) 0px, var(--gold) 24px, var(--magenta) 24px, var(--magenta) 48px, var(--purple) 48px, var(--purple) 72px);
+  }
+
+  .container {
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 0 20px 60px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .header { text-align: center; padding: 32px 0 8px; }
+
+  .badge {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--dark);
+    font-weight: 900;
+    font-size: 10px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    padding: 6px 16px;
+    border-radius: 100px;
+    margin-bottom: 16px;
+    border: 2px solid var(--dark);
+  }
+
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    line-height: 1;
+    color: var(--dark);
+    margin-bottom: 8px;
+  }
+  h1 em { color: var(--magenta); font-style: italic; display: block; font-size: 50px; }
+
+  .tagline {
+    font-size: 14px; font-weight: 700;
+    color: var(--dark);
+    background: var(--gold);
+    display: inline-block;
+    padding: 6px 18px; border-radius: 100px;
+    border: 2px solid var(--dark); margin-top: 8px;
+  }
+
+  .divider { display: flex; align-items: center; gap: 10px; margin: 24px 0; }
+  .divider-line { flex: 1; height: 2px; background: var(--dark); }
+  .divider-icon { font-size: 18px; }
+
+  /* TIP BOX */
+  .tip-box {
+    background: var(--purple); color: var(--white);
+    border-radius: 20px; padding: 20px;
+    margin-bottom: 14px;
+    border: 2.5px solid var(--dark);
+    box-shadow: 5px 5px 0 var(--dark);
+    position: relative; overflow: hidden;
+  }
+  .tip-box::after {
+    content: '✦'; position: absolute;
+    right: 14px; top: 8px;
+    font-size: 64px; opacity: 0.12; line-height: 1;
+  }
+  .tip-label { font-size: 11px; font-weight: 900; letter-spacing: 0.22em; text-transform: uppercase; opacity: 0.85; margin-bottom: 8px; }
+  .tip-box p { font-size: 14px; line-height: 1.6; font-weight: 700; }
+  .tip-box strong { font-weight: 900; text-decoration: underline; }
+
+  /* CARDS */
+  .card {
+    background: var(--white);
+    border-radius: 20px; padding: 20px;
+    margin-bottom: 12px;
+    border: 2.5px solid var(--dark);
+    box-shadow: 5px 5px 0 var(--dark);
+  }
+
+  /* CHECKLIST */
+  .checklist { list-style: none; display: flex; flex-direction: column; gap: 11px; }
+  .checklist li { display: flex; align-items: flex-start; gap: 10px; font-size: 14px; line-height: 1.5; color: var(--dark); }
+  .check-icon {
+    flex-shrink: 0; width: 24px; height: 24px;
+    border-radius: 6px; display: flex;
+    align-items: center; justify-content: center;
+    font-size: 13px; font-weight: 900;
+    margin-top: 1px; border: 2px solid var(--dark);
+  }
+  .check-yes { background: #B8F5B0; color: var(--dark); }
+  .check-no { background: var(--light-magenta); color: var(--magenta); }
+  .list-label { font-size: 11px; font-weight: 900; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 14px; }
+  .label-yes { color: #2A8A20; }
+  .label-no { color: var(--magenta); }
+
+  /* CTA */
+  .cta-section { margin-top: 28px; text-align: center; }
+  .cta-box {
+    background: var(--magenta); border-radius: 24px;
+    padding: 28px 24px;
+    border: 2.5px solid var(--dark);
+    box-shadow: 6px 6px 0 var(--dark);
+    position: relative; overflow: hidden;
+  }
+  .cta-box::before { content: '✦'; position: absolute; right: -10px; top: -16px; font-size: 110px; opacity: 0.1; line-height: 1; }
+  .cta-eyebrow { font-size: 11px; font-weight: 900; letter-spacing: 0.25em; text-transform: uppercase; color: var(--white); opacity: 0.9; margin-bottom: 8px; }
+  .cta-heading { font-family: 'Playfair Display', serif; font-size: 34px; color: var(--white); line-height: 1.05; margin-bottom: 6px; }
+  .cta-heading em { font-style: italic; }
+  .cta-sub { font-size: 13px; font-weight: 700; color: var(--white); opacity: 0.95; margin-bottom: 20px; }
+  .cta-btn {
+    display: inline-block;
+    background: var(--gold); color: var(--dark);
+    font-size: 15px; font-weight: 900;
+    padding: 14px 32px; border-radius: 100px;
+    text-decoration: none;
+    border: 2.5px solid var(--dark);
+    box-shadow: 4px 4px 0 var(--dark);
+    transition: transform 0.15s, box-shadow 0.15s;
+  }
+  .cta-btn:hover { transform: translate(-2px,-2px); box-shadow: 6px 6px 0 var(--dark); }
+
+  /* SAVE PROMPT */
+  .save-prompt {
+    display: flex; align-items: center; gap: 14px;
+    background: var(--light-gold);
+    border-radius: 16px; padding: 16px;
+    margin-top: 14px;
+    border: 2.5px solid var(--dark);
+    box-shadow: 4px 4px 0 var(--dark); text-align: left;
+  }
+  .save-icon { font-size: 28px; flex-shrink: 0; }
+  .save-title { font-size: 14px; font-weight: 900; color: var(--dark); margin-bottom: 2px; }
+  .save-sub { font-size: 12px; font-weight: 700; color: var(--dark); opacity: 0.7; line-height: 1.4; }
+
+  .footer { text-align: center; margin-top: 36px; padding-top: 20px; border-top: 2.5px solid var(--dark); }
+  .footer-logo { font-family: 'Playfair Display', serif; font-size: 20px; font-style: italic; color: var(--magenta); margin-bottom: 3px; }
+  .footer-tagline { font-size: 10px; font-weight: 900; letter-spacing: 0.2em; text-transform: uppercase; color: var(--dark); opacity: 0.4; }
+
+  .fade-in { opacity: 0; transform: translateY(16px); animation: fadeUp 0.5s ease forwards; }
+  @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
+  .fade-in:nth-child(1) { animation-delay: 0.04s; }
+  .fade-in:nth-child(2) { animation-delay: 0.10s; }
+  .fade-in:nth-child(3) { animation-delay: 0.17s; }
+  .fade-in:nth-child(4) { animation-delay: 0.24s; }
+  .fade-in:nth-child(5) { animation-delay: 0.31s; }
+  .fade-in:nth-child(6) { animation-delay: 0.38s; }
+  .fade-in:nth-child(7) { animation-delay: 0.45s; }
+</style>
+</head>
+<body>
+
+<div class="stripe-top"></div>
+
+<div class="container">
+
+  <!-- HEADER -->
+  <div class="header fade-in">
+    <div class="badge">✦ Unfiltered Beauty ✦</div>
+    <h1>wow! your lashes<br><em>are gorgeous.</em></h1>
+    <div class="tagline">here's how to keep them that way 💜</div>
+  </div>
+
+  <!-- SAVE PROMPT -->
+  <div class="save-prompt fade-in" style="margin-top:20px;">
+    <span class="save-icon">📲</span>
+    <div>
+      <div class="save-title">Save this for later!</div>
+      <div class="save-sub">Screenshot this page or save it to your home screen so your aftercare is always one tap away.</div>
+    </div>
+  </div>
+
+  <!-- DO'S -->
+  <div class="fade-in">
+    <div class="card" style="margin-bottom:10px;">
+      <p class="list-label label-yes">✓ yes, do these things</p>
+      <ul class="checklist">
+        <li><span class="check-icon check-yes">✓</span><span>Clean your lashes <strong>every day</strong> with the lash cleanser provided. Clean lashes last longer!</span></li>
+        <li><span class="check-icon check-yes">✓</span><span><strong>Brush them daily</strong> with a clean spoolie after they're fully dry, especially after waking up.</span></li>
+        <li><span class="check-icon check-yes">✓</span><span>Sleep on a <strong>silk pillowcase.</strong> Your skin will love it too. You're welcome.</span></li>
+        <li><span class="check-icon check-yes">✓</span><span>Use <strong>oil-free</strong> skincare and makeup around the eye area.</span></li>
+        <li><span class="check-icon check-yes">✓</span><span>Book your <strong>refresh every 2 to 3 weeks</strong> to keep them looking full!</span></li>
+      </ul>
+    </div>
+
+    <!-- DON'TS -->
+    <div class="card">
+      <p class="list-label label-no">✕ please just don't</p>
+      <ul class="checklist">
+        <li><span class="check-icon check-no">✕</span><span><strong>Picking or pulling</strong> at your lashes. Your natural ones come with them, and I will cry... and so will you because it hurts!</span></li>
+        <li><span class="check-icon check-no">✕</span><span>Heavy <strong>oil-based</strong> makeup removers or eye creams right on the lash line. This system is more forgiving than old school lashes, but oil can still break down the bond over time.</span></li>
+        <li><span class="check-icon check-no">✕</span><span><strong>Waterproof mascara.</strong> It requires oil to remove, and will take your lashes with it.</span></li>
+        <li><span class="check-icon check-no">✕</span><span><strong>Rubbing your eyes.</strong> We know it feels good. We know. Just don't. 😭</span></li>
+        <li><span class="check-icon check-no">✕</span><span><strong>Steam rooms or saunas</strong> frequently. Occasional is okay, but daily is not.</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-section fade-in">
+    <div class="cta-box">
+      <p class="cta-eyebrow">✦ live unfiltered ✦</p>
+      <div class="cta-heading">Ready for your<br><em>refresh?</em></div>
+      <p class="cta-sub">Most clients come back every 2 to 3 weeks. Book before they start looking sad! 💜</p>
+      <a href="https://www.vagaro.com/unfilteredbeautync" target="_blank" class="cta-btn">Book My Refresh ✦</a>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer fade-in">
+    <div class="footer-logo">Unfiltered Beauty</div>
+    <div class="footer-tagline">Glowing. Unbothered. Unfiltered.</div>
+  </div>
+
+</div>
+
+<div class="stripe-bottom"></div>
+
+</body>
+</html>
